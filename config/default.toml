@@ -1,0 +1,93 @@
+# tessel configuration
+#
+# Changes are applied automatically when you save this file.
+# If something is wrong, tessel keeps the previous config and shows a
+# notification with the error.
+
+[general]
+gaps_in = 5                   # pixels between windows
+gaps_out = 20                 # pixels between windows and the screen edge
+split_ratio = 0.5             # size of the first half of each new split (0.1 - 0.9)
+workspaces = 9                # workspaces per monitor (1 - 20)
+focus_follows_mouse = false   # focus the window under the cursor
+cursor_follows_focus = false  # move the cursor to windows focused with the keyboard
+
+[decoration]
+# Window border colours (Windows 11). Use "#rrggbb", "default" or "none".
+active_border = "#33ccff"
+inactive_border = "#595959"
+# Corner style: "round", "small", "square" or "default".
+rounding = "round"
+
+[animations]
+enabled = true
+duration_ms = 180
+curve = "overshoot"           # "linear", "ease-out" or "overshoot"
+
+# Window rules. `exe` and `class` match exactly (case-insensitive), `title`
+# matches a substring. Every field you set must match. Effects:
+#   float = true      start floating instead of tiled
+#   ignore = true     never manage this window
+#   workspace = N     open on workspace N
+# Tip: UWP apps (Calculator, Settings) all report exe "ApplicationFrameHost",
+# so match them by title instead.
+
+[[rules]]
+class = "#32770"              # standard Windows dialogs
+float = true
+
+[[rules]]
+title = "Picture-in-Picture"
+float = true
+
+[[rules]]
+exe = "Taskmgr"
+float = true
+
+# Key bindings: "modifiers+key" = "command".
+# Modifiers: alt, ctrl, shift, win. Run `tessel --help` for all commands.
+# Note: Windows reserves many win+key combinations, which is why alt is the default.
+
+[binds]
+"alt+h" = "focus left"
+"alt+j" = "focus down"
+"alt+k" = "focus up"
+"alt+l" = "focus right"
+
+"alt+shift+h" = "move left"
+"alt+shift+j" = "move down"
+"alt+shift+k" = "move up"
+"alt+shift+l" = "move right"
+
+"alt+1" = "workspace 1"
+"alt+2" = "workspace 2"
+"alt+3" = "workspace 3"
+"alt+4" = "workspace 4"
+"alt+5" = "workspace 5"
+"alt+6" = "workspace 6"
+"alt+7" = "workspace 7"
+"alt+8" = "workspace 8"
+"alt+9" = "workspace 9"
+
+"alt+shift+1" = "move-to-workspace 1"
+"alt+shift+2" = "move-to-workspace 2"
+"alt+shift+3" = "move-to-workspace 3"
+"alt+shift+4" = "move-to-workspace 4"
+"alt+shift+5" = "move-to-workspace 5"
+"alt+shift+6" = "move-to-workspace 6"
+"alt+shift+7" = "move-to-workspace 7"
+"alt+shift+8" = "move-to-workspace 8"
+"alt+shift+9" = "move-to-workspace 9"
+
+"alt+shift+space" = "toggle-float"
+"alt+shift+f" = "toggle-fullscreen"
+"alt+shift+m" = "toggle-maximize"
+"alt+shift+enter" = "promote"
+"alt+equal" = "resize +0.05"
+"alt+minus" = "resize -0.05"
+"alt+shift+q" = "close"
+"alt+enter" = "exec wt"
+
+"alt+shift+r" = "reload"
+"alt+shift+p" = "toggle-pause"
+"alt+shift+e" = "quit"
